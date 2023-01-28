@@ -1,0 +1,303 @@
+/* start header  */
+header {
+  background-image: url("../imgs/slide1.png");
+  background-size: cover;
+  height: calc(100vh - 44px);
+  padding: 20px 0;
+  margin-bottom: 50px;
+}
+
+header h1 {
+  font-size: 18px;
+  word-spacing: 5 px;
+  text-transform: uppercase;
+}
+
+header .headLink li {
+  font-size: 12px;
+  color: #222222;
+  font-weight: bold;
+  padding: 0px 10px 5px;
+  display: inline;
+  cursor: pointer;
+  user-select: none;
+}
+
+header .headLink li:hover {
+  color: var(--secondColor);
+}
+
+header .headLink .search {
+  /* border: 1px solid #e7e7e7;
+  padding: 0px 10px;
+  background-color: white; */
+}
+
+/* header .headLink .search input{
+  border: 0;
+  padding: 7px 0; 
+} */
+
+header .headLink i {
+  right: -27px;
+  top: 6px;
+  cursor: pointer;
+}
+
+header .headLink i:hover {
+  color: var(--secondColor);
+}
+
+/* start menu  */
+.menu {
+  background-color: white;
+  width: 60%;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 1px;
+}
+
+.headLink div[data-id="1"] {
+  left: 65px;
+}
+
+.headLink div[data-id="2"] {
+  left: 150px;
+}
+
+.headLink div[data-id="3"] {
+  left: 185px;
+}
+
+.headLink div[data-id="4"] {
+  left: 210px;
+}
+
+.menu::before {
+  content: "";
+  position: absolute;
+  border: 10px solid;
+  border-color: transparent transparent var(--secondColor);
+  top: -20px;
+}
+
+.headLink div[data-id="3"]::before {
+  left: 93px;
+}
+
+.headLink div[data-id="4"]::before {
+  left: 178px;
+}
+
+.menu p {
+  background-color: var(--mainColor);
+  color: white;
+  font-weight: bold;
+  padding: 15px 30px;
+  border-radius: 1px;
+
+}
+
+.menu .types {}
+
+.menu .types ul {
+  padding-bottom: 10px;
+
+}
+
+.menu .types li {
+  display: block;
+  color: #727272;
+}
+
+.menu .types ul li:first-of-type {
+  padding-bottom: 15px;
+  color: #575153;
+}
+
+/* end  menu  */
+header .tag {
+  position: absolute;
+  bottom: -490px;
+  left: 190px;
+  color: #454647;
+  padding: 10px 20px;
+  border: 2px solid #737373;
+}
+
+/* end  header  */
+
+/* start product view */
+
+
+/* start portfolio */
+.potfolio .container {}
+
+.potfolio .container ul {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.potfolio .container ul li {
+  cursor: pointer;
+  user-select: none;
+  font-size: 13px;
+  border-radius: 2px;
+  padding: 10px 20px;
+  margin-left: 2px;
+  transition: 0.5s;
+}
+
+.potfolio .container ul li:hover,
+.filterActive {
+  background-color: var(--secondColor);
+  color: white;
+}
+
+.boxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 70px;
+  justify-content: center;
+  transition: 0.5s;
+}
+
+.boxes .box {
+  /* flex-basis: 25%; */
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 25px;
+}
+
+@media (min-width: 768px) {
+  .boxes .box {
+    flex-basis: 25%;
+  }
+}
+
+@media (min-width: 1119px) {
+  .boxes .box {
+    flex-basis: 25%;
+  }
+}
+
+.boxes .box img {
+  max-width: 100%;
+}
+
+.boxes .box .text {
+  padding: 10px;
+  position: absolute;
+  left: 0;
+  background-color: white;
+  width: 100%;
+  transition: 0.3s;
+  bottom: -100px;
+}
+
+.boxes .box:hover .text {
+  bottom: 0;
+}
+
+.boxes .box .text p {
+  font-size: 12px;
+  color: var(--secondColor);
+  margin: 5px 0;
+}
+
+.boxes .box img:last-of-type {
+  background-color: var(--secondColor);
+  padding: 10px;
+  border-radius: 50%;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: -100px;
+  transition: 0.4s;
+}
+
+.boxes .box:hover img:last-of-type {
+  top: 20px;
+}
+
+.boxesButton button {
+  padding: 10px 30px;
+  text-transform: uppercase;
+  background-color: var(--secondColor);
+  border: 0;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.boxesButton button a {
+  color: white;
+  text-align: center;
+  text-decoration: none;
+}
+
+/* end portfolio */
+/* end product view */
+
+/* start lookbook */
+.lookbook {
+  /* display: flex;
+  justify-content: space-between; */
+  overflow: hidden;
+}
+
+.lookbook .box {
+  position: relative;
+  text-align: end;
+}
+
+.lookbook .box h3 {
+  color: #575153;
+
+}
+
+.lookbook .box h3 span {
+  font-weight: bold;
+}
+
+.lookbook .box img {
+  max-width: 100%;
+}
+
+.lookbook .box .caption {
+  position: absolute;
+  right: 55px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.lookbook .box .caption p {
+  margin: 0;
+  padding: 0;
+  width: 160px;
+  font-size: 11px;
+  color: #727272;
+}
+
+.lookbook .box .caption button {
+  margin: 15px 0;
+  font-size: 13px;
+  color: #737373;
+  letter-spacing: 2px;
+  word-spacing: 2px;
+  padding: 12px 20px;
+  border-radius: 0;
+  background-color: transparent;
+  border: 2px solid #737373;
+  transition: 0.3s;
+}
+
+.lookbook .box .caption button:hover {
+  border-color: var(--secondColor);
+  background-color: var(--secondColor);
+  color: white;
+
+}
+
+/* end lookbook */

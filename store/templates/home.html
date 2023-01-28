@@ -1,0 +1,264 @@
+{% extends "base.html" %}
+
+{% block addlinks %}
+<!-- primary css file -->
+<link rel="stylesheet" href="{{url_for('static' , filename ='css/style.css')}}" />
+{% endblock %}
+
+{% block title%} Store {% endblock %}
+
+{% block style %} {% endblock %}
+
+{% block body %}
+
+{% with messages = get_flashed_messages(with_categories = True) %}
+{% if messages %}
+{% for categorie , msg in messages %}
+<div class="alert alert-{{categorie}} alert-dismissible  fade show m-0">
+  {{msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+
+{% endfor %}
+
+{%endif%}
+
+{%endwith %}
+
+<header>
+  <div class="container d-flex justify-content-between align-items-center">
+    <h1><strong>avenue</strong> fashion</h1>
+    <div class="headLink position-relative">
+      <ul>
+        <li data-id="0">MENS</li>
+        <li data-id="1">WOMENS</li>
+        <li data-id="2">THE BRAND</li>
+        <li data-id="3">LOCAL STORES</li>
+        <li data-id="4">LOOK BOOK</li>
+      </ul>
+      <i class="fa-solid fa-magnifying-glass position-absolute"></i>
+      <div class="menu hidden position-absolute" data-id="0">
+        <div class="types d-flex justify-content-between">
+          <ul>
+            <li><strong>CASUALS</strong></li>
+            <li><a href="{{ url_for('jackets') }}">Jackets</a> </li>
+            <li>Hoodies & Sweatshirts</li>
+            <li>Polo Shirts</li>
+            <li>Sportswear</li>
+            <li>Trousers & Chinos</li>
+            <li>T-Shirts</li>
+          </ul>
+          <ul>
+            <li><strong>FORMAL</strong></li>
+            <li>Shirts</li>
+            <li>Suits</li>
+            <li>Trousers</li>
+          </ul>
+        </div>
+        <p class="sale">
+          AUTUMN SALE ! UP TO 50% OFF
+        </p>
+      </div>
+      <div class="menu hidden position-absolute" data-id="1">
+        <div class="types d-flex justify-content-between">
+          <ul>
+            <li><strong>CASUALS</strong></li>
+            <li>Jackets</li>
+            <li>Hoodies & Sweatshirts</li>
+            <li>Polo Shirts</li>
+            <li>Sportswear</li>
+            <li>Trousers & Chinos</li>
+            <li>T-Shirts</li>
+          </ul>
+          <ul>
+            <li><strong>FORMAL</strong></li>
+            <li>Shirts</li>
+            <li>Suits</li>
+            <li>Trousers</li>
+          </ul>
+        </div>
+        <p class="sale">
+          AUTUMN SALE ! UP TO 50% OFF
+        </p>
+      </div>
+      <div class="menu hidden position-absolute" data-id="2">
+        <div class="types d-flex justify-content-between">
+          <ul>
+            <li><strong>CASUALS</strong></li>
+            <li>Jackets</li>
+            <li>Hoodies & Sweatshirts</li>
+            <li>Polo Shirts</li>
+            <li>Sportswear</li>
+            <li>Trousers & Chinos</li>
+            <li>T-Shirts</li>
+          </ul>
+          <ul>
+            <li><strong>FORMAL</strong></li>
+            <li>Shirts</li>
+            <li>Suits</li>
+            <li>Trousers</li>
+          </ul>
+        </div>
+        <p class="sale">
+          AUTUMN SALE ! UP TO 50% OFF
+        </p>
+      </div>
+      <div class="menu hidden position-absolute" data-id="3">
+        <div class="types d-flex justify-content-between">
+          <ul>
+            <li><strong>CASUALS</strong></li>
+            <li>Jackets</li>
+            <li>Hoodies & Sweatshirts</li>
+            <li>Polo Shirts</li>
+            <li>Sportswear</li>
+            <li>Trousers & Chinos</li>
+            <li>T-Shirts</li>
+          </ul>
+          <ul>
+            <li><strong>FORMAL</strong></li>
+            <li>Shirts</li>
+            <li>Suits</li>
+            <li>Trousers</li>
+          </ul>
+        </div>
+        <p class="sale">
+          AUTUMN SALE ! UP TO 50% OFF
+        </p>
+      </div>
+      <div class="menu hidden position-absolute" data-id="4">
+        <div class="types d-flex justify-content-between">
+          <ul>
+            <li><strong>CASUALS</strong></li>
+            <li>Jackets</li>
+            <li>Hoodies & Sweatshirts</li>
+            <li>Polo Shirts</li>
+            <li>Sportswear</li>
+            <li>Trousers & Chinos</li>
+            <li>T-Shirts</li>
+          </ul>
+          <ul>
+            <li><strong>FORMAL</strong></li>
+            <li>Shirts</li>
+            <li>Suits</li>
+            <li>Trousers</li>
+          </ul>
+        </div>
+        <p class="sale">
+          AUTUMN SALE ! UP TO 50% OFF
+        </p>
+      </div>
+      <p class="tag">SHOP MEN'S COLLECTION</p>
+    </div>
+
+  </div>
+</header>
+<!-- end header -->
+<!-- start product view -->
+<section class="products">
+  <div class="potfolio" id="#PORTFOLIO">
+    <div class="container">
+      <ul class="filter">
+        <li class="filterActive">POPULAR</li>
+        <li>NEW ARRIVALS</li>
+        <li>BEST SELLERS</li>
+        <li>SPECIAL OFFERS</li>
+        <li>COMING SOON</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="boxes">
+    <div class="box" data-type="APP">
+      <img src="{{url_for('static' , filename ='imgs/item1.png')}}" alt="" />
+      <img src="{{url_for('static' , filename ='imgs/plus.png')}}" alt="" />
+      <div class="text">
+        <h4>Awesome Image</h4>
+        <p>paragraphe</p>
+      </div>
+    </div>
+    <div class="box" data-type="PHOTOGRAPHY">
+      <img src="{{url_for('static' , filename ='imgs/item2.png')}}" alt="" />
+      <img src="{{url_for('static' , filename ='imgs/plus.png')}}" alt="" />
+      <div class="text">
+        <h4>Awesome Image</h4>
+        <p>paragraphe</p>
+      </div>
+    </div>
+    <div class="box" data-type="APP">
+      <img src="{{url_for('static' , filename ='imgs/item3.png')}}" alt="" />
+      <img src="{{url_for('static' , filename ='imgs/plus.png')}}" alt="" />
+      <div class="text">
+        <h4>Awesome Image</h4>
+        <p>paragraphe</p>
+      </div>
+    </div>
+    <div class="box" data-type="PHOTOGRAPHY">
+      <img src="{{url_for('static' , filename ='imgs/item4.png')}}" alt="" />
+      <img src="{{url_for('static' , filename ='imgs/plus.png')}}" alt="" />
+      <div class="text">
+        <h4>Awesome Image</h4>
+        <p>paragraphe</p>
+      </div>
+    </div>
+    <div class="box" data-type="APP">
+      <img src="{{url_for('static' , filename ='imgs/item5.png')}}" alt="" />
+      <img src="{{url_for('static' , filename ='imgs/plus.png')}}" alt="" />
+      <div class="text">
+        <h4>Awesome Image</h4>
+        <p>paragraphe</p>
+      </div>
+    </div>
+    <div class="box" data-type="WEB">
+      <img src="{{url_for('static' , filename ='imgs/item6.png')}}" alt="" />
+      <img src="{{url_for('static' , filename ='imgs/plus.png')}}" alt="" />
+      <div class="text">
+        <h4>Awesome Image</h4>
+        <p>paragraphe</p>
+      </div>
+    </div>
+    <div class="box" data-type="WEB">
+      <img src="{{url_for('static' , filename ='imgs/item1.png')}}" alt="" />
+      <img src="{{url_for('static' , filename ='imgs/plus.png')}}" alt="" />
+      <div class="text">
+        <h4>Awesome Image</h4>
+        <p>paragraphe</p>
+      </div>
+    </div>
+    <div class="box" data-type="PRINT">
+      <img src="{{url_for('static' , filename ='imgs/item3.png')}}" alt="" />
+      <img src="{{url_for('static' , filename ='imgs/plus.png')}}" alt="" />
+      <div class="text">
+        <h4>Awesome Image</h4>
+        <p>paragraphe</p>
+      </div>
+    </div>
+  </div>
+  <!-- <div class="boxesButton">
+    <button><a href="">more</a></button>
+  </div> -->
+
+  <!-- end potfolio -->
+</section>
+<!-- end product view -->
+
+<!-- Start LOOKBOOK -->
+<section class="lookbook row m-0">
+  <div class="box col-4">
+    <img src="{{url_for('static' , filename ='imgs/lookbook1.png')}}" alt="">
+    <div class="caption">
+      <h3> <span>MEN'S</span><br>LOOKBOOK</h3>
+      <p>Lorem ipsum dolor sit amet eras facilisis
+        consectetur adipiscing elit lor, integer lorem consecteur dignissim laciniqui.
+        Elementum metus facilisis ut phasellu.
+      </p>
+      <button class="btn btn-primary">VIEW NOW</button>
+    </div>
+  </div>
+</section>
+<!-- END LOOKBOOK -->
+
+{% endblock %}
+
+{% block script %}
+<script src="{{url_for('static' , filename ='script/main.js')}}"></script>
+{% endblock %}

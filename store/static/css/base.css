@@ -1,0 +1,61 @@
+body {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hidden {
+  display: none;
+}
+
+:root {
+  --mainColor: #333;
+  --secondColor: #00c8c8;
+  --textColor: #8b8b8b;
+}
+
+li,
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Start nav  */
+nav {
+  background-color: var(--mainColor);
+}
+
+nav .container a {
+  color: var(--textColor);
+  text-decoration: none;
+}
+
+nav .navLink ul {
+  margin: 0;
+}
+
+nav .navLink ul li {
+  display: inline;
+  padding: 5px;
+  cursor: pointer;
+}
+
+nav .navLink button {
+  border-radius: 0;
+  background-color: var(--secondColor);
+  color: white;
+  margin-left: 30px;
+  padding: 10px 17px;
+  border-radius: 1px;
+  border: 0;
+}
+
+nav .navLink button i {
+  padding-right: 15px;
+}
+
+nav .navLink ul li a {
+  text-decoration: none;
+  color: var(--textColor);
+}
+
+/* end nav  */

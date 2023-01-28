@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block addlinks %}
+
+<link rel="stylesheet" href="{{url_for('static' , filename ='css/product.css')}}">
+
+{% endblock %}
+
+{% block title%} Product {% endblock %}
+
+{% block style %} {% endblock %}
+
+{% block body %}
+
+<!-- partial:index.partial.html -->
+<div class="container text-center">
+  <h1 class="mt-4">{{cloth_type}} product</h1>
+
+
+  <div class="shell">
+    <div class="container">
+
+
+      <div class="row">
+
+
+        {% for card in jacket %}
+        {% set img_path = '../static/imgs/products/'+card.image %}
+        <div class="col-md-3">
+          <div class="wsk-cp-product">
+            <div class="wsk-cp-img">
+              <!-- <img src="{{image_path1}}" alt="Product" class="img-responsive" /> -->
+              <img src="{{img_path}}" alt="Product" class="img-responsive" />
+            </div>
+            <div class="wsk-cp-text">
+              <div class="category">
+                <span>{{card.name}}</span>
+              </div>
+              <div class="card-footer">
+                <div class="wcf-left"><span class="price">{{ card.price }}DH</span></div>
+                <form class="wcf-right" method="post">
+                  <input type="hidden" value="{{ card.id }}" name="id">
+                  <button class="buy-btn" type="submit" value="Add To" name="submit"> <i
+                      class="fa-solid fa-store"></i></button>
+                </form>
+                <div> {{card.quantity}} </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        {%endfor%}
+      </div>
+
+    </div>
+  </div>
+  <!-- partial -->
+
+
+  {% endblock %}
+
+  {% block script %}
+  {% endblock %}
